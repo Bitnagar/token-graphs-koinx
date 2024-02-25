@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --crypto-primary-background: #eff2f5;
+  --crypto-primary-foreground: #0b1426;
+
+  --crypto-gray-70: #768396;
+  --crypto-gray-80: #5d667b;
+  --crypto-gray-90: #334155;
+  --crypto-gray-100: #1e293b;
+
+  --crypto-blue: #0052fe;
+
+  --crypto-success-background: #ebf9f4;
+  --crypto-success-foreground: #14b079;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  all: unset;
+}

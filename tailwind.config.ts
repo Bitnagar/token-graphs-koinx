@@ -7,7 +7,27 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          background: "var(--crypto-primary-background)",
+          foreground: "var(--crypto-primary-foreground)",
+        },
+        gray: {
+          70: "var(--crypto-gray-70)",
+          80: "var(--crypto-gray-80)",
+          90: "var(--crypto-gray-90)",
+          100: "var(--crypto-gray-100)",
+        },
+        success: {
+          background: "var(--crypto-success-background)",
+          foreground: "var(--crypto-success-foreground)",
+        },
+        blue: {
+          60: "var(--crypto-blue)",
+        },
+      },
+    },
   },
   plugins: [],
 };
