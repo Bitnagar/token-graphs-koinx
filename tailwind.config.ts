@@ -20,9 +20,13 @@ const config: Config = {
           90: "var(--crypto-gray-90)",
           100: "var(--crypto-gray-100)",
         },
-        success: {
-          background: "var(--crypto-success-background)",
-          foreground: "var(--crypto-success-foreground)",
+        profit: {
+          background: "var(--crypto-profit-background)",
+          foreground: "var(--crypto-profit-foreground)",
+        },
+        loss: {
+          background: "var(--crypto-loss-background)",
+          foreground: "var(--crypto-loss-foreground)",
         },
         blue: {
           60: "var(--crypto-blue)",

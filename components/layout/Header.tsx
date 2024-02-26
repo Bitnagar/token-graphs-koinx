@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export default function Header() {
   return (
-    <header className="border-gray-60 flex h-20 w-full border px-[60px]">
+    <header className="border-gray-60 flex h-20 w-full border px-[60px] py-[30px]">
       <section className="flex w-full items-center justify-between">
         <img
           src="/assets/kx_logo.svg"

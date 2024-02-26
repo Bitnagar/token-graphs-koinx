@@ -14,8 +14,11 @@
 
   --crypto-blue: #0052fe;
 
-  --crypto-success-background: #ebf9f4;
-  --crypto-success-foreground: #14b079;
+  --crypto-profit-background: #ebf9f4;
+  --crypto-profit-foreground: #14b079;
+
+  --crypto-loss-background: #ffecea;
+  --crypto-loss-foreground: #e96975;
 }
 
 * {
