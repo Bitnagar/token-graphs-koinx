@@ -5,10 +5,8 @@ import { GetTrendingCoins } from "@/utils/crypto/utils";
 
 async function TrendingCoins({ limit }: { limit: number }) {
   const { coins } = await GetTrendingCoins();
-  console.log("rendering");
-
   return (
-    <div className="max-w-[427px] rounded-lg bg-white p-6">
+    <div className="w-full rounded-lg bg-white p-6 md:max-w-[427px]">
       <h1 className="mb-6 text-2xl font-bold">Trending Coins (24h)</h1>
       <div>
         {coins.map((coin: any, index: number) => {
@@ -31,7 +29,7 @@ async function TrendingCoins({ limit }: { limit: number }) {
                 </span>
               </div>
               <ChangeIndicator
-                className="text-base font-medium"
+                className="text-sm font-medium"
                 priceChange={priceChange}
               />
             </div>

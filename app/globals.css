@@ -41,3 +41,53 @@ body {
 #carousel__container::-webkit-scrollbar {
   display: none;
 }
+
+.main__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr fit-content;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-template-areas:
+    "a a b"
+    "c c c";
+}
+
+.chart__container {
+  grid-area: a;
+}
+
+.trending__coins {
+  grid-area: b;
+  justify-self: center;
+  align-self: flex-start;
+}
+.youMayAlsoLike {
+  grid-area: c;
+}
+
+@media screen and (max-width: 1000px) {
+  .main__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-areas:
+      "a"
+      "b"
+      "c";
+  }
+
+  .chart__container {
+    grid-area: a;
+  }
+
+  .trending__coins {
+    grid-area: c;
+    justify-self: center;
+  }
+  .youMayAlsoLike {
+    grid-area: b;
+  }
+}

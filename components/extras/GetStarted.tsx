@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export function GetStarted() {
   return (
-    <div className="flex h-[515px] w-[436px] items-center justify-center rounded-2xl bg-blue-60 p-10 text-white">
+    <div className="mb-5 flex h-[515px] max-w-[436px] items-center justify-center rounded-2xl bg-blue-60 p-10 text-white">
       <div className="flex flex-col items-center justify-items-center gap-5 text-center">
         <h1 className="text-2xl font-bold">Get Started with KoinX for FREE</h1>
         <p className="font-medium">

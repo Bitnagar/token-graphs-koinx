@@ -27,7 +27,7 @@ export default function Carousel({ coins }: { coins: any }) {
       <div
         ref={containerRef}
         id="carousel__container"
-        className="flex  gap-4 overflow-x-scroll scroll-smooth"
+        className="flex w-screen gap-4 overflow-x-scroll scroll-smooth"
       >
         {coins.map((coin: any, key: number) => {
           return <CoinCard coin={coin} key={key} />;
@@ -35,13 +35,13 @@ export default function Carousel({ coins }: { coins: any }) {
       </div>
       <button
         onClick={prevImage}
-        className="border-gray-60 absolute -left-4 top-[55%] cursor-pointer rounded-full border bg-white px-2 py-0.5"
+        className="border-gray-60 absolute -left-2 top-[55%] cursor-pointer rounded-full border bg-white px-2 py-0.5 active:bg-gray-70 lg:-left-4"
       >
         {"<"}
       </button>
       <button
         onClick={NextImage}
-        className="border-gray-60 absolute -right-4 top-[55%] cursor-pointer rounded-full border bg-white px-2 py-0.5"
+        className="border-gray-60 absolute -right-2 top-[55%] cursor-pointer rounded-full border bg-white px-2 py-0.5 active:bg-gray-70 lg:-right-4 xl:-right-10"
       >
         {">"}
       </button>
@@ -65,13 +65,15 @@ function CoinCard({ coin }: any) {
               height={24}
               className="self-center"
             />
-            <span className="ml-1">{coin.item.symbol}</span>
+            <span className="ml-1 text-[10px] lg:ml-2 lg:text-base">
+              {coin.item.symbol}
+            </span>
             <ChangeIndicator
-              className="ml-5 text-xs font-normal"
+              className="ml-1 text-[10px] font-normal lg:ml-5 lg:text-sm"
               priceChange={coin.item.data["price_change_percentage_24h"]["usd"]}
             />
           </div>
-          <span className="text-xl font-medium">
+          <span className="text-xs font-medium lg:text-xl">
             {coin.item.data.price.toLocaleString()}
           </span>
         </div>

@@ -29,9 +29,11 @@ export function TradingViewWidget() {
           "support_host": "https://www.tradingview.com"
         }`;
     container.current.appendChild(script);
-    return () => {
-      container.current.removeChild(script);
-    };
+    if (process.env.NODE_ENV === "development") {
+      return () => {
+        container.current.removeChild(script);
+      };
+    }
   }, []);
 
   return (

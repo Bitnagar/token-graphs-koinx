@@ -11,7 +11,7 @@ export function ChangeIndicator({
   return (
     <span
       className={cn(
-        "rounded-[4px] px-2 py-1",
+        "min-w-max rounded-[4px] px-2 py-1 ",
         profit
           ? "bg-profit-background text-profit-foreground"
           : "bg-loss-background text-loss-foreground",

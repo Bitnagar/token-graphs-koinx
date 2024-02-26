@@ -11,9 +11,11 @@ export default async function CryptoDynamicIdLayout({ children }: Props) {
   return (
     <>
       <Breadcrumbs />
-      <section className="grow bg-primary-background px-4 py-6 lg:px-14 lg:py-4">
-        <TrendingCoins limit={3} />
-        <GetStarted />
+      <section className="main__grid grow bg-primary-background px-3.5 pb-6 pt-4 xl:px-14 xl:py-4">
+        <div className="trending__coins w-fit">
+          <GetStarted />
+          <TrendingCoins limit={3} />
+        </div>
         {children}
         <YouMayAlsoLike />
       </section>

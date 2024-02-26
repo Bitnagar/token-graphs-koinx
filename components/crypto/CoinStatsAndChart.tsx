@@ -19,7 +19,7 @@ export function CoinStatsAndChart({
   coinName: string;
 }) {
   return (
-    <div className="flex h-[410px] flex-col rounded-lg bg-white p-6 lg:h-[760px] lg:max-w-[70%]">
+    <div className="flex h-[550px] flex-col rounded-lg bg-white p-4 lg:h-[760px]">
       <CoinDetails coinData={coinData} coinName={coinName} />
       <TradingViewWidget />
     </div>
@@ -38,22 +38,22 @@ function CoinDetails({
   const { image, symbol, market_cap_rank: rank } = coinDataById;
   return (
     <div className="border-b-gray-60 mb-6 border-b-[2px] pb-6">
-      <div className="mb-10 flex items-center gap-3">
+      <div className="mb-10 flex items-center lg:gap-3">
         <img
           src={image.large}
           alt={coinName}
           width={36}
           height={36}
-          className="self-center"
+          className="mr-1.5 self-center"
         />
         <div className="flex">
-          <h1 className="mr-1 flex items-center gap-2 text-2xl font-bold text-gray-100">
+          <h1 className="flex items-center gap-2 text-xl font-bold text-gray-100 lg:mr-1 lg:text-2xl">
             {coinName.charAt(0).toUpperCase() + coinName.slice(1)}
             <span className="text-base font-semibold text-gray-80">
               {symbol.toUpperCase()}
             </span>
           </h1>
-          <span className="ml-4 rounded-lg bg-gray-70 p-[10px] text-white">
+          <span className="ml-4 rounded-lg bg-gray-70 px-2.5 py-2 text-base text-white lg:p-[10px]">
             Rank #{rank}
           </span>
         </div>
@@ -64,7 +64,7 @@ function CoinDetails({
             ${coin.usd.toLocaleString()}
           </span>
           <ChangeIndicator
-            className="ml-8 text-base font-medium"
+            className="ml-8 min-w-max text-sm font-medium"
             priceChange={coin.usd_24h_change}
           />
           <span className="ml-3 font-medium text-gray-70">(24H)</span>
