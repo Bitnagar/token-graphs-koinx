@@ -28,6 +28,12 @@ export async function getCoinDataById(coinName: string) {
   return data;
 }
 
+export async function GetTrendingCoins() {
+  const resp = await fetch("https://api.coingecko.com/api/v3/search/trending");
+  const data = await resp.json();
+  return data;
+}
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }

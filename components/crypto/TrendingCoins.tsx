@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { memo } from "react";
 import { ChangeIndicator } from "./ChangeIndicator";
+import { GetTrendingCoins } from "@/utils/crypto/utils";
 
 async function TrendingCoins({ limit }: { limit: number }) {
   const { coins } = await GetTrendingCoins();
@@ -39,12 +40,6 @@ async function TrendingCoins({ limit }: { limit: number }) {
       </div>
     </div>
   );
-}
-
-async function GetTrendingCoins() {
-  const resp = await fetch("https://api.coingecko.com/api/v3/search/trending");
-  const data = await resp.json();
-  return data;
 }
 
 export default memo(TrendingCoins);

@@ -38,6 +38,6 @@ body {
   flex-direction: column;
 }
 
-button {
-  all: unset;
+#carousel__container::-webkit-scrollbar {
+  display: none;
 }
