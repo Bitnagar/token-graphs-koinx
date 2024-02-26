@@ -19,7 +19,7 @@ export function CoinStatsAndChart({
   coinName: string;
 }) {
   return (
-    <div className="flex h-[760px] max-w-[884px] flex-col rounded-lg bg-white p-6">
+    <div className="flex h-[410px] flex-col rounded-lg bg-white p-6 lg:h-[760px] lg:max-w-[70%]">
       <CoinDetails coinData={coinData} coinName={coinName} />
       <TradingViewWidget />
     </div>
@@ -65,7 +65,7 @@ function CoinDetails({
           </span>
           <ChangeIndicator
             className="ml-8 text-base font-medium"
-            change={coin.usd_24h_change}
+            priceChange={coin.usd_24h_change}
           />
           <span className="ml-3 font-medium text-gray-70">(24H)</span>
         </div>

@@ -21,5 +21,9 @@ export default function Breadcrumbs() {
     }
   });
 
-  return <div className="mb-[18px]">{upperCasePaths}</div>;
+  return (
+    <div className="bg-primary-background px-4 pt-4 lg:px-14">
+      {upperCasePaths}
+    </div>
+  );
 }

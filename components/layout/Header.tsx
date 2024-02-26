@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export default function Header() {
   return (
-    <header className="border-gray-60 flex h-20 w-full border px-[60px] py-[30px]">
+    <header className="border-gray-60 flex h-fit w-full border px-[60px] py-5">
       <section className="flex w-full items-center justify-between">
         <img
           src="/assets/kx_logo.svg"
@@ -10,7 +10,7 @@ export default function Header() {
           alt="koinx logo"
         />
         <nav>
-          <ul className="flex items-center gap-8 text-base font-semibold">
+          <ul className="hidden items-center gap-8 text-base font-semibold lg:flex">
             <li>Crypto Taxes</li>
             <li>Free Tools</li>
             <li>Resource Center</li>

@@ -1,13 +1,13 @@
 import { cn } from "@/utils/crypto/utils";
 
 export function ChangeIndicator({
-  change,
+  priceChange,
   className,
 }: {
-  change: number;
-  className: string;
+  priceChange: number;
+  className?: string;
 }) {
-  const profit = change > 0 ? true : false;
+  const profit = priceChange > 0 ? true : false;
   return (
     <span
       className={cn(
@@ -18,7 +18,7 @@ export function ChangeIndicator({
         className,
       )}
     >
-      {profit ? "▲" : "▼"} {change.toFixed(2)}%
+      {profit ? "▲" : "▼"} {priceChange.toFixed(2)}%
     </span>
   );
 }
