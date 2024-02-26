@@ -6,6 +6,7 @@
   --crypto-primary-background: #eff2f5;
   --crypto-primary-foreground: #0b1426;
 
+  --crypto-gray-60: #dedfe2;
   --crypto-gray-70: #768396;
   --crypto-gray-80: #5d667b;
   --crypto-gray-90: #334155;
@@ -27,6 +28,11 @@ html,
 body {
   width: 100%;
   height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 button {

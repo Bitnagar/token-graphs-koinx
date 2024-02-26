@@ -14,6 +14,7 @@ const config: Config = {
           foreground: "var(--crypto-primary-foreground)",
         },
         gray: {
+          60: "var(--crypto-gray-60)",
           70: "var(--crypto-gray-70)",
           80: "var(--crypto-gray-80)",
           90: "var(--crypto-gray-90)",
