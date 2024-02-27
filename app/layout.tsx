@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="wrapper h-full w-full ">
+        <div className="wrapper flex h-full w-full flex-col">
           <Header />
           {children}
         </div>
