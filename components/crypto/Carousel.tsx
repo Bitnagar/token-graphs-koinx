@@ -2,6 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { RefObject, useRef } from "react";
 import { ChangeIndicator } from "./ChangeIndicator";
+import { useRouter } from "next/navigation";
+
 export default function Carousel({ coins }: { coins: any }) {
   const containerRef: RefObject<HTMLDivElement> = useRef(null);
 
@@ -27,7 +29,7 @@ export default function Carousel({ coins }: { coins: any }) {
       <div
         ref={containerRef}
         id="carousel__container"
-        className="flex w-screen gap-4 overflow-x-scroll scroll-smooth"
+        className="flex gap-4 overflow-x-scroll scroll-smooth"
       >
         {coins.map((coin: any, key: number) => {
           return <CoinCard coin={coin} key={key} />;
@@ -35,13 +37,13 @@ export default function Carousel({ coins }: { coins: any }) {
       </div>
       <button
         onClick={prevImage}
-        className="border-gray-60 absolute -left-2 top-[55%] cursor-pointer rounded-full border bg-white px-2 py-0.5 active:bg-gray-70 lg:-left-4"
+        className="absolute left-[8px] top-[55%] cursor-pointer rounded-full border border-gray-60 px-2 py-0.5 backdrop-blur-[1px] active:bg-gray-70"
       >
         {"<"}
       </button>
       <button
         onClick={NextImage}
-        className="border-gray-60 absolute -right-2 top-[55%] cursor-pointer rounded-full border bg-white px-2 py-0.5 active:bg-gray-70 lg:-right-4 xl:-right-10"
+        className="absolute right-[8px]  top-[55%] cursor-pointer rounded-full border border-gray-60 bg-white px-2 py-0.5 backdrop-blur-[1px] active:bg-gray-70"
       >
         {">"}
       </button>
@@ -50,10 +52,14 @@ export default function Carousel({ coins }: { coins: any }) {
 }
 
 function CoinCard({ coin }: any) {
+  const router = useRouter();
   return (
     <div
       id="carousel__coinCard"
-      className="border-gray-60 min-w-fit rounded-lg border p-4"
+      className="min-w-fit cursor-pointer rounded-lg border border-gray-60 p-4"
+      onClick={() => {
+        router.push(`${coin.item.id}`);
+      }}
     >
       <div className="flex flex-col">
         <div>

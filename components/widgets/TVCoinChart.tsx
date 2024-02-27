@@ -2,8 +2,9 @@
 
 import React, { useEffect, useRef, memo } from "react";
 
-export function TradingViewWidget() {
+export function TradingViewWidget({ symbol }: { symbol: string }) {
   const container = useRef<any>();
+  const upperCaseSymbol = symbol.toUpperCase();
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -14,7 +15,7 @@ export function TradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "BITSTAMP:BTCUSD",
+          "symbol": "${upperCaseSymbol}",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -29,11 +30,6 @@ export function TradingViewWidget() {
           "support_host": "https://www.tradingview.com"
         }`;
     container.current.appendChild(script);
-    if (process.env.NODE_ENV === "development") {
-      return () => {
-        container.current.removeChild(script);
-      };
-    }
   }, []);
 
   return (
