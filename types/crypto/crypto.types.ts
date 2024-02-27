@@ -7,7 +7,7 @@ export type CoinSimplePriceType = {
   };
 };
 
-export type GetCoinByIdDataType = {
+export type GetCoinByIdDataSuccessType = {
   id: string;
   symbol: string;
   name: string;
