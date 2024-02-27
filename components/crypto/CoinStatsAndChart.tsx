@@ -1,14 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import {
   CoinSimplePriceType,
-  GetCoinByIdDataType,
+  GetCoinByIdDataSuccessType,
 } from "@/types/crypto/crypto.types";
 import { TradingViewWidget } from "../widgets/TVCoinChart";
 import { ChangeIndicator } from "./ChangeIndicator";
+import { notFound } from "next/navigation";
 
 type CombinedCoinDataType = {
   simplePriceData: CoinSimplePriceType;
-  coinDataById: GetCoinByIdDataType;
+  coinDataById: GetCoinByIdDataSuccessType;
 };
 
 export function CoinStatsAndChart({
@@ -18,12 +19,16 @@ export function CoinStatsAndChart({
   coinData: CombinedCoinDataType;
   coinName: string;
 }) {
-  return (
-    <div className="flex h-[550px] flex-col rounded-lg bg-white p-4 lg:h-[760px]">
-      <CoinDetails coinData={coinData} coinName={coinName} />
-      <TradingViewWidget symbol={coinData.coinDataById.symbol} />
-    </div>
-  );
+  if ("symbol" in coinData.coinDataById === false) {
+    notFound();
+  } else {
+    return (
+      <div className="flex h-[550px] flex-col rounded-lg bg-white p-4 lg:h-[760px]">
+        <CoinDetails coinData={coinData} coinName={coinName} />
+        <TradingViewWidget symbol={coinData.coinDataById.symbol} />
+      </div>
+    );
+  }
 }
 
 function CoinDetails({

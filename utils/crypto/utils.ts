@@ -1,6 +1,6 @@
 import {
   CoinSimplePriceType,
-  GetCoinByIdDataType,
+  GetCoinByIdDataSuccessType,
 } from "@/types/crypto/crypto.types";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -24,14 +24,14 @@ export async function getCoinDataById(coinName: string) {
   const resp = await fetch(
     `https://api.coingecko.com/api/v3/coins/${coinName}?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false`,
   );
-  const data: GetCoinByIdDataType = await resp.json();
+  const data: GetCoinByIdDataSuccessType = await resp.json();
   return data;
 }
 
 export async function GetTrendingCoins() {
   const resp = await fetch("https://api.coingecko.com/api/v3/search/trending");
   const data = await resp.json();
-  return data;
+  return { data: data, status: resp.status };
 }
 
 export function cn(...inputs: ClassValue[]) {
