@@ -30,7 +30,7 @@ export function TradingViewWidget({ symbol }: { symbol: string }) {
           "support_host": "https://www.tradingview.com"
         }`;
     container.current.appendChild(script);
-  }, []);
+  }, [upperCaseSymbol]);
 
   return (
     <div className="tradingview-widget-container grow" ref={container}>
